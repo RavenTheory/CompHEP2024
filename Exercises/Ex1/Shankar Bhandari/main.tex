@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{feynmf}
+%\usepackage[T1]{fontenc}
+\usepackage{biblatex}
+\addbibresource{sources.bib}
+
+\title{\textbf{COMPUTING METHODS IN HEP} Exercise 1 Spring 2024}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{Create a git repository}
+The repo is at \verb|https://github.com/RavenTheory/CompInHEP_k2024|
+
+
+
+\section{\LaTeX document with Feynman graphs}
+
+
+\begin{fmffile}{fd}
+\begin{figure}[h]
+\centering
+\parbox{50mm}{
+\begin{fmfchar*}(100,60)
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+    \fmf{fermion,tension=0.7}{i1,v1}
+    \fmf{fermion,tension=0.3}{v2,i2}
+    \fmf{fermion, tension=0.5}{v1,v2}
+    \fmf{photon,tension=0.3}{v1,o1}
+    \fmf{photon,tension=0.7}{v2,o2}
+        \put(-5, 60){$e^+$}
+        \put(-5, -5){$e^-$}
+        \put(95, 60){$\gamma$}
+        \put(95, -5){$\gamma$}
+\end{fmfchar*}}
+\parbox{50mm}{
+\begin{fmfchar*}(100,60)
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+    \fmf{fermion,tension=0.3}{i1,v1}
+    \fmf{fermion,tension=0.7}{v2,i2}
+    \fmf{fermion, tension=0.5}{v1,v2}
+    \fmf{photon,tension=0.7}{v1,o1}
+    \fmf{photon,tension=0.3}{v2,o2}
+        \put(-5, 60){$e^+$}
+        \put(-5, -5){$e^-$}
+        \put(95, 60){$\gamma$}
+        \put(95, -5){$\gamma$}
+\end{fmfchar*}}
+\caption{Feynman graphs for the lowest order contributions to electron-positron annihilation \cite{Martin:2008zz}.}
+\end{figure}
+\end{fmffile}
+\newpage
+\printbibliography
+\end{document}
