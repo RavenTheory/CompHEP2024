@@ -2,14 +2,15 @@ SRC = $(wildcard *.cpp)
 OBJECTS = $(addsuffix .o $(basename $(SRC)))
 
 all:
-	@$(MAKE) compile --no-print-directory
-	@$(MAKE) hello --no-print-directory
-	@$(MAKE) run --no-print-directory
+	$(MAKE) compile
+	$(MAKE) hello
+	$(MAKE) run
 
 .cpp.o:
 	$(CXX) -c $<
 
 test:
+	echo $(SRC)
 	echo $(OBJECTS)
 
 compile: hello.o

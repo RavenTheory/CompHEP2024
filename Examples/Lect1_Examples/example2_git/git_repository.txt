@@ -1,8 +1,8 @@
 # create an empty repo (need to be done only once)
 on markka.it.helsinki.fi
 cd /home/ad/web1/<username>/
-mkdir CompInHEP_k2023.git
-cd CompInHEP_k2023.git
+mkdir Test.git
+cd Test.git
 git --bare init
 mv hooks/post-update.sample hooks/post-update
 git update-server-info
@@ -10,17 +10,21 @@ git update-server-info
 # clone my repo (need to be done only once)
 On your own machine
 fork:
-git clone https://www.mv.helsinki.fi/home/slehti/CompInHEP_k2023.git
-git remote add public ssh://markka.it.helsinki.fi:/home/ad/web1/<username>/CompInHEP_k2023.git
+git clone https://www.mv.helsinki.fi/home/slehti/Test.git
+git remote add public ssh://markka.it.helsinki.fi:/home/ad/web1/slehti/Test.git
 git push public
 
 
 # you work with your own repo, you clone your own repo and merge code from others
 work:
-git clone https://www.mv.helsinki.fi/home/<username>/CompInHEP_k2023.git
-cd CompInHEP_k2023
-git remote add sami https://www.mv.helsinki.fi/home/slehti//CompInHEP_k2023.git
-git fetch sami
-git merge sami/master
-git remote add public ssh://markka.it.helsinki.fi:/home/ad/web1/<username>/CompInHEP_k2023.git
+git clone https://www.mv.helsinki.fi/home/slehti/Test.git
+cd Test
+git remote add lxplus http://cmsdoc.cern.ch/~slehti/Test.git
+git fetch lxplus
+git merge lxplus/master
+git remote add public ssh://markka.it.helsinki.fi:/home/ad/web/s/slehti/Test.git
 git push public
+
+# lxplus works on his repo
+git clone http://cmsdoc.cern.ch/~slehti/Test.git
+
