@@ -1,3 +1,0 @@
-text before..
-${CFLAGS-${CONF_DEBUG:--O3 -g} -fomit-frame-pointer -ffast-math -Wall} \
-text after..
