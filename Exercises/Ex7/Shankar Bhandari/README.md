@@ -1,4 +1,4 @@
-##The code for Problem 1 is in hdecay.py.
+## The code for Problem 1 is in hdecay.py.
 hdecay.py calculates the width for different higgs masses and makes a plot using ROOT. 
 The output of this file is Hiss_width_as_function_of_mass_hdecay.pdf and Hiss_width_as_function_of_mass_hdecay.ROOT.
 
@@ -8,7 +8,7 @@ When doing problem 2 I did notice that I can circumvent this by using bash scrip
 
 
 
-##The code for problem 2 is in FeynHiggs_Hdecay.py, demo.cc and two scripts feynsetup.sh and runFeynHiggs.sh
+## The code for problem 2 is in FeynHiggs_Hdecay.py, demo.cc and two scripts feynsetup.sh and runFeynHiggs.sh
 
 For this program it is enough to just run the python program FeynHiggs_Hdecay.
 NOTE THAT THE BASH SCRIPTS REQUITE PERMISSION TO EXECUTE!
