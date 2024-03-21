@@ -3,4 +3,4 @@
 setenv PYTHIA8DATA "$PWD/pythia8311/share/Pythia8/xmldoc"
 setenv LD_LIBRARY_PATH "$PWD/pythia8311/lib"
 #---------------------------------------------------------------
-./p1.exe > p1result
+./p1.exe > p1result.txt

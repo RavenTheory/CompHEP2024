@@ -3,9 +3,9 @@
 setenv PYTHIA8DATA "$PWD/pythia8311/share/Pythia8/xmldoc"
 setenv LD_LIBRARY_PATH "$PWD/pythia8311/lib"
 #---------------------------------------------------------------
-./p1.exe
+./p1.exe > p1result.txt
 #---------------------------------------------------------------
 ./simulation.exe > rawdata.txt
 ./datacleaner.py
 #---------------------------------------------------------------
-root p2_ROOT.cpp
+root p2_ROOT.cpp > p2Width.txt
