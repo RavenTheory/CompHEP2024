@@ -1,21 +1,39 @@
-## The code for Problem 1 is in hdecay.py.
+# Instructions on usage
+
+Remember to give permission to .sh files.
+The hdecaySetup.sh should've been made as a makefile but realised it too late to fix it now.
+
+## Problem 1: running the program
+
+hdecaySetup.sh
+pyroot hdecay.py
+
+
+
+## Problem 2:
+
+hdecaySetup.sh (Only if not already done)
+pyroot FeynHiggs
+
+
+# Some explanations
+
+## The code for Problem 1 is in hdecay.py and in the script hdecaySetup.sh
 hdecay.py calculates the width for different higgs masses and makes a plot using ROOT. 
 The output of this file is Hiss_width_as_function_of_mass_hdecay.pdf and Hiss_width_as_function_of_mass_hdecay.ROOT.
 
-This can be run with "pyroot hdecay.py" and it should work as lonng as there is hdecay program inside the directory hdecay with the executable named run that one gets from using the makefile.
-When I did the problem 1, I couldn't make the makefile work with commands using python so it is necessary to do so manually if there is no run executable. 
-When doing problem 2 I did notice that I can circumvent this by using bash script that gets called by python, but I didn't go back to implement this on problem 1, since I think it is not really necessary.
+This can be run with "pyroot hdecay.py" and it should work as long as there is hdecay program inside the directory hdecay with the executable named run that one gets from using the makefile.
+The hdecay program can be installed by using the bash script hdecaySetup.sh. It will download the decay and then compile to get the makefile.
 
 
 
 ## The code for problem 2 is in FeynHiggs_Hdecay.py, demo.cc and two scripts feynsetup.sh and runFeynHiggs.sh
 
-For this program it is enough to just run the python program FeynHiggs_Hdecay.
+For this program it is enough to just run the python program FeynHiggs_Hdecay, unless you haven't configured hdecay yet since it is used by FeynHiggs_Hdecay.py
 NOTE THAT THE BASH SCRIPTS REQUITE PERMISSION TO EXECUTE!
 
-feynsetup.sh is a bash script that build the FeynHiggs program from the tar file for the programm.
+feynsetup.sh is a bash script that downloads and build the FeynHiggs program from the tar file for the programm.
 And the python program actually calls this script if necessary so user doesn't have to worry about that.
-I have only included the tar file with the script to build the programme since the program itself is quite large while the tar file to build it is not.
 
 runFeynHiggs.sh is a bash script that runs the compiling and executing the resulting file. 
 This also directs the output of the executable into a txt file called feyndata.txt for our python program to read.
@@ -26,10 +44,5 @@ This demo.cc is copy of the example file provided along with the FeynHiggs progr
 Finally the FeynHiggs_Hdecay.py is the program that combines all of the scripts and programs mentioned above to give us the graphs using ROOT.
 This program also needs the hdecay.py since it uses it as a module and then calls its functions.
 The output file of this program are HdecayVsFeynHiggs.pdf and HdecayVsFeynHiggs.ROOT.
-This program calls the bash script to build the FeynHiggs programme if it isn't built already.
-After the FeynHiggs is built/if it's already there then this program calculates the width using FeynHiggs (via bash script that executes the demo.cc) and the width using HDECAY by calling the functions from hdecay.py.
-After calculating the widths this program outputs the data in pdf or a rootfile.
-
-This program can be run with "pyroot FeynHiggs_Hdecay.py" (the bash scripts need to have the permission to execute otherwise the program won't work and might cause some other issues)
 
 

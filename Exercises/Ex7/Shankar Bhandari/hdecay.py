@@ -2,9 +2,22 @@
 import numpy as np
 import subprocess
 import os
-import ctypes
+import sys
 from ROOT import TCanvas, TGraph, TFile
 from array import array
+
+def setup():
+    
+    if os.path.isdir("hdecay"):
+        print("The folder hdecay exists!!")
+    else:
+        
+        #For whatever reason this didn't work (tried also with changing the makefile inside hdecay with python to give it gfortran-9 as compiler)
+        #subprocess.run( './hdecaySetup.sh' )
+        #Not enough time to fix it to the level I wan't so this shall do
+        print("Please run the hdecaySetup.sh script using following command: ./hdecaySetup.sh")
+        print("Just like for other .sh scripts it might be necessary to give necessary permissions for this script to execute!!")
+        sys.exit()       
 
 def updateHiggsMass(mHiggs):
     #This function modifies the mass parameter for SM Higgs in the input file for HDECAY executable
@@ -34,8 +47,6 @@ def calculateWidth(mHiggs):
     
     os.chdir("hdecay")
     
-    #Tried to make it so that the python would give make command to shell incase there was no run file, but
-    # That seems bit too complicated than just having python give shell commands, so I am not implementing that, since I don not have infinite amount of time
     if os.path.isfile("run"):
         subprocess.run(["./run"])
     else:
@@ -62,6 +73,9 @@ def getWidth():
         print(f"{filename} not found.")
 
 def main():
+    
+    setup()
+
     #Let's first print the value of width with the Higgs mass of 125:
     
     calculateWidth(125.0)

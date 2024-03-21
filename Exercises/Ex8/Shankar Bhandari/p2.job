@@ -1,0 +1,9 @@
+#!/bin/tcsh
+#---------------------------------------------------------------
+setenv PYTHIA8DATA "$PWD/pythia8311/share/Pythia8/xmldoc"
+setenv LD_LIBRARY_PATH "$PWD/pythia8311/lib"
+#---------------------------------------------------------------
+./simulation.exe > rawdata.txt
+./datacleaner.py
+#---------------------------------------------------------------
+root p2_ROOT.cpp > p2Width.txt

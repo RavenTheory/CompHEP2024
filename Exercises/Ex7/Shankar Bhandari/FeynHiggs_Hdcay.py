@@ -8,15 +8,15 @@ from array import array
 import hdecay
 
 
-#This starts with the assumption that there will be at least the tar folder in the directory of this program
-#since the tar folder will be uploaded in the github along with other files. Then this setup part will setup the
-# FeynHiggs using a bash sccript. Permission must be given to the bash script to execute for this setup to work.
+# The setup will download the FeynHiggs package using a bash sccript and it will also set it up.
+# Permission must be given to the bash script to execute for this setup to work.
 def setup():
     
     if os.path.isdir("FeynHiggs-2.18.1"):
-        print("The file FeynHiggs-2.18.1 exists, there is no need for futher setup")
+        print("The folder FeynHiggs-2.18.1 exists, there is no need for futher setup")
     else:
         subprocess.run( './feynsetup.sh' )
+        #For some reason this works while the bash script in previous problem didn't
  
     
 def updateHiggsMass(mHiggs):
@@ -39,11 +39,12 @@ def updateHiggsMass(mHiggs):
         print(f"{filename} not found")
 
 
-#def runHigs():
-    #subprocess.run( './runFeynHiggs.sh' )
 
-#I have figured out that it is much more powerful to write a bash script and execute it from python than to try scripting from python at least for this use case, so I am doing exactly that
+
+#I have figured out that it is much more powerful to write a bash script and execute it from python than to try scripting from python at least for this use case,
+#so I am doing exactly that
 #Also the exact command line arguments that worked in runFeynHiggs.sh didn't work with subprocess, so I just decided to use the bash script
+
 def calculateWidth(mHiggs):
     #This file first updates the mass of the Higgs and then executes the program that calculates the width
     updateHiggsMass(mHiggs)
@@ -74,15 +75,12 @@ def main():
     
     print("Remember to give the permission to the bash scripts (ending in .sh) permission to execute")
 
+    
+    
     updateHiggsMass(140)
     
+    hdecay.setup()
     setup()
-
-    #runHigs()
-    
-    #calculateWidth(150)
-    
-    #print(getWidth())
     
     
     #This main is adapted from the problem 1

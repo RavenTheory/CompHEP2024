@@ -3,5 +3,6 @@
     "files.associations": {
         "ostream": "cpp",
         "mygraph.C": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false
 }

@@ -69,7 +69,7 @@ static void setPara() {
 
   cRealType MT = 173.2;
   cRealType TB = 5;
-cRealType MA0 = 204.2;
+cRealType MA0 = 140;
   cRealType MHp = -1;
 
   cRealType MSusy = 1000;
