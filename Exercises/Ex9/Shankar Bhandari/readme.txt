@@ -36,4 +36,4 @@ The probability that my muon system would detect a muon from a minimum bias even
 ---------------------------------------------------------------------------------------------------------------------------
 
 ##Note:
-I did also include the data file from simulation (muons.root) since it's small and didn't wanna have make clean remove .root files.
+I did also include the data file from simulation (muons.root) since it's small and didn't want to have make clean remove .root files.
