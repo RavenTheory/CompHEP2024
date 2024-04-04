@@ -2,7 +2,9 @@
     "C_Cpp.errorSquiggles": "enabled",
     "files.associations": {
         "ostream": "cpp",
-        "mygraph.C": "cpp"
+        "mygraph.C": "cpp",
+        "Transverse_Momentum_Distribution.C": "cpp",
+        "Pseudorapidity_Distribution.C": "cpp"
     },
     "cmake.configureOnOpen": false
 }
