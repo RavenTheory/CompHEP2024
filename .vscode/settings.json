@@ -4,7 +4,9 @@
         "ostream": "cpp",
         "mygraph.C": "cpp",
         "Transverse_Momentum_Distribution.C": "cpp",
-        "Pseudorapidity_Distribution.C": "cpp"
+        "Pseudorapidity_Distribution.C": "cpp",
+        "plotHisto.C": "cpp",
+        "plotNtuple.C": "cpp"
     },
     "cmake.configureOnOpen": false
 }
